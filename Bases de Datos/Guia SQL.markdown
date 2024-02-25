@@ -17,7 +17,7 @@ CREATE DATABASE nombre;
 #Despues se le dan privilegios al usuario
 GRANT ALL PRIVILEGES ON baseDeDatos TO 'usuario'@localhost;
 #Se recargan los privilegios para efectuar los cambios
-FLUSH PRIVILEGES
+FLUSH PRIVILEGES;
 ```
 
 Comandos SQL sobre bases de datos:
