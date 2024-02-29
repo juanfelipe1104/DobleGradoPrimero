@@ -1,20 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
-// #define LIMPIABUFER while(getchar()!='\n');
+
 #define LEEDATO(formato,dato) scanf(formato,dato); while(getchar()!='\n');
-
-
 
 typedef enum gruposUtad_e
 {
   IPR1A,IPR1B,IPR1C,MAIS,FIIS
 } gruposUtad_e;
-const *char[]= {"IPR1A","IPR1B","IPR1C","MAIS","FIIS"}; 
+const char* gruposUtadNombre[] = {"IPR1A", "IPR1B", "IPR1C", "MAIS", "FIIS"}; 
 typedef struct listaEnteros_t
 {
-  int* edades;
-  int  tamMax;
-  int  numUsados;
+  int *numeros;
+  int tamMax;
+  int numUsados;
 } listaEnteros_t;
 
 typedef struct listaEdades_t
@@ -25,7 +23,7 @@ typedef struct listaEdades_t
 
 typedef struct listaGrupos_t
 {
-  listaEdades_t** numeros;
+  listaEdades_t** edadesPorGrupo;
   int tamMax;
   int numUsados;
 } listaGrupos_t;
@@ -33,15 +31,15 @@ typedef struct listaGrupos_t
 
 void introduceEnListaNumeros(listaEnteros_t* lista,int pos,int num)
 {
-  if(lista.tamMax<=pos) 
+  if(lista->tamMax<=pos) 
   {
-    lista.numeros=realloc(lista.numeros,sizeof(int)*(pos+1);
-    lista.tamMax=pos+1;
+    lista->numeros=realloc(lista->numeros,sizeof(int)*(pos+1));
+    lista->tamMax=pos+1;
   }
-  lista.numeros[pos]=num;
-  if(lista.numUsados<=pos)
+  lista->numeros[pos]=num;
+  if(lista->numUsados<=pos)
   {
-    lista.numUsados=pos+1;
+    lista->numUsados=pos+1;
   }
   
 }
@@ -52,17 +50,17 @@ void pedirListaEdadesDeGrupo(listaEdades_t* edadesGrupo)
  
   int edad=0;
   int pos=0;
-  edadesGrupo.edades=(listaEnteros_t*)malloc(sizeof(listaEnteros_t));
-  edadesGrupo.edades.numeros=NULL;
-  edadesGrupo.edades.tamMax=0;
-  edadesGrupo.edades.numUsados=0;
-  printf("Introduzca edades del grupo %s, acabar con -1\n",gruposUtadNombre[edadesGrupo.grupo]);
+  edadesGrupo->edades=(listaEnteros_t*)malloc(sizeof(listaEnteros_t));
+  edadesGrupo->edades->numeros=NULL;
+  edadesGrupo->edades->tamMax=0;
+  edadesGrupo->edades->numUsados=0;
+  printf("Introduzca edades del grupo %s, acabar con -1\n",gruposUtadNombre[edadesGrupo->grupo]);
   do
   {
     LEEDATO("%d",&edad);
     if(edad>=0)
     {
-       introduceEnListaNumeros(edadesGrupo.edades,pos,edad);
+       introduceEnListaNumeros(edadesGrupo->edades,pos,edad);
        pos++;
     }
     else
@@ -75,13 +73,6 @@ void pedirListaEdadesDeGrupo(listaEdades_t* edadesGrupo)
 
 }
 
-typedef struct listaGrupos_t
-{
-  listaEdades_t* numeros;
-  int tamMax;
-  int numUsados;
-} listaGrupos_t;
-
 
 
 listaEdades_t* pedirNuevoGrupo()
@@ -93,7 +84,7 @@ listaEdades_t* pedirNuevoGrupo()
   {
     printf("%d %s\n",grupo,gruposUtadNombre[grupo]);
   }
-  LEEDATO("%d",&nuevaLista.grupo);
+  LEEDATO("%d",&nuevaLista->grupo);
   pedirListaEdadesDeGrupo(nuevaLista);
   return nuevaLista;
 }
@@ -112,7 +103,7 @@ int calculaMaxima(listaEdades_t* grupo)
   return max;
 }
 
-int calculaMaxima(listaEdades_t* grupo)
+int calculaMin(listaEdades_t* grupo)
 {
   unsigned int min=0xFFFFFFFF;
   for(int i=0;i<grupo->edades->numUsados;i++)
@@ -140,8 +131,8 @@ float calculaMedia(listaEdades_t* grupo)
 
 int main(int argc,char **argv)
 {
-  listaGrupos_t grupos={.edadesPorGrupo=NULL,int tamMax=0,.numUsados=0};
-  
+  listaGrupos_t grupos={.edadesPorGrupo=NULL, .tamMax=0, .numUsados=0};
+  int salir = 0;
   grupos.tamMax=1;
  
   
@@ -152,24 +143,24 @@ int main(int argc,char **argv)
      LEEDATO("%d",&salir)
      if(salir==1)
      {
-        if(grupos.numUsados==grupo.tamMax)
+        if(grupos.numUsados==grupos.tamMax)
         {
-          grupo.tamMax++;
-          grupos.edadesPorGrupo=(listaEdades_t**)realloc(sizeof(listaEdades_t**)*grupo.tamMax);
+          grupos.tamMax++;
+          grupos.edadesPorGrupo=(listaEdades_t**)realloc(grupos.edadesPorGrupo, sizeof(listaEdades_t**)*grupos.tamMax);
         }
-        grupos.edadesGrupo[grupos.numUsados]=pedirNuevoGrupo();
+        grupos.edadesPorGrupo[grupos.numUsados]=pedirNuevoGrupo();
         grupos.numUsados++;
        
       
      }
     
-  } salir(salir!=2);
-   for(int i=0;i<grupos.numUsados,i++)
+  } while(salir!=2);
+   for(int i=0;i<grupos.numUsados;i++)
    {
-     printf("Datos del grupo %s\n",gruposUtadNombre[grupos.edadesGrupo[i]->grupo]);
-     float media = calculaMedia(grupos.edadesGrupo[i]);
-     int max = calculaMaxima(grupos.edadesGrupo[i]);
-     int min = calculaMin(grupos.edadesGrupo[i]);
+     printf("Datos del grupo %s\n",gruposUtadNombre[grupos.edadesPorGrupo[i]->grupo]);
+     float media = calculaMedia(grupos.edadesPorGrupo[i]);
+     int max = calculaMaxima(grupos.edadesPorGrupo[i]);
+     int min = calculaMin(grupos.edadesPorGrupo[i]);
      printf("media %f\n max %d\n min %d\n",media,max,min);
    }
    return 0;
