@@ -69,10 +69,16 @@ int main(int argc,char **argv){
 			break;
 		}
 	}
-	for (int i = 0; i < grupos.tamMax; i++){
+	for (int i = 0; i < grupos.numUsados; i++){
+		free(grupos.edadesPorGrupo[i]->edades->numeros);
+		grupos.edadesPorGrupo[i]->edades->numeros = NULL;
+		free(grupos.edadesPorGrupo[i]->edades);
+		grupos.edadesPorGrupo[i]->edades = NULL;
 		free(grupos.edadesPorGrupo[i]);
 		grupos.edadesPorGrupo[i] = NULL;
 	}
+	free(grupos.edadesPorGrupo);
+	grupos.edadesPorGrupo = NULL;
 	return 0;
 }
 
