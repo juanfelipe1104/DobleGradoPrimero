@@ -65,12 +65,12 @@ int main(int argc, char **argv){
 				salir = 1;
 				if (agenda.numUsados){
 					for (int i = 0; i < agenda.numUsados; i++){
-						free(agenda.contactos[agenda.numUsados].nombre.cadena);
-						agenda.contactos[agenda.numUsados].nombre.cadena = NULL;
-						free(agenda.contactos[agenda.numUsados].apellido.cadena);
-						agenda.contactos[agenda.numUsados].apellido.cadena = NULL;
-						free(agenda.contactos[agenda.numUsados].telefono.arrayInt);
-						agenda.contactos[agenda.numUsados].telefono.arrayInt = NULL;
+						free(agenda.contactos[i].nombre.cadena);
+						agenda.contactos[i].nombre.cadena = NULL;
+						free(agenda.contactos[i].apellido.cadena);
+						agenda.contactos[i].apellido.cadena = NULL;
+						free(agenda.contactos[i].telefono.arrayInt);
+						agenda.contactos[i].telefono.arrayInt = NULL;
 					}
 					free(agenda.contactos);
 					agenda.contactos = NULL;
