@@ -66,17 +66,17 @@ int existeFichero(char *fichero){
 char *leeLineaDinamicaFichero(FILE *f){
 	char *letras = NULL, ultimaLetraLeida = '\0';
 	int numLetrasLeidas = 0, numLetrasMax = 0;
-	while((ultimaLetraLeida != '\n') && (!feof(f))){
+	do {
 		ultimaLetraLeida = getc(f);
 		if (numLetrasLeidas == numLetrasMax){
 			numLetrasMax++;
 			letras = (char*)realloc(letras, sizeof(char)*numLetrasMax);
 		}
-		if (ultimaLetraLeida != '\n'){
+		if ((ultimaLetraLeida != '\n')&&(ultimaLetraLeida != EOF)){
 			letras[numLetrasLeidas] = ultimaLetraLeida;
 			numLetrasLeidas++;
 		}
-	}
+	}while((ultimaLetraLeida != '\n') && (!feof(f)));
 	letras[numLetrasLeidas] = '\0';
 	return letras;
 }

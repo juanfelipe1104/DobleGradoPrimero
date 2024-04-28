@@ -1,0 +1,57 @@
+\documentclass[fleqn]{article}
+\usepackage{amsmath}
+\title{Solución Ejercicios Espacios Vectoriales}
+\author{Juan Rodríguez}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+	\maketitle
+	\section{Ejercicio 1}
+	\[
+	S = \{(x,y,z)\in R^3 \hspace{5pt}/\hspace{5pt}2x - y + 3z = 0\} = \{(x,2x + 3z,z)\in R^3 \hspace{5pt}/\hspace{5pt}x,z \in R\}
+	\]
+	1. Ver si es distinto del vacío: $S \neq \emptyset$
+	\[
+	(1,2,0) \in S \rightarrow S \neq \emptyset 
+	\]
+	2. Ver si la combinación lineal de dos vectores de S pertenece a S: ¿$\alpha(x,2x+3z,z) + \beta(x',2x'+3z',z') \in S$?
+	\[
+	\alpha(x,2x+3z,z) + \beta(x',2x'+3z',z') = (\alpha x + \beta x', \alpha (2x+3z)+\beta(2x'+3z'),\alpha z + \beta z') \in S, \forall \alpha , \beta
+	\]
+	Al verificar esas dos condiciones, podemos afirmar que es subespacio vectorial.
+	\section{Ejercicio 2}
+	\[
+	S = \{(x,y)\in R^2 \hspace{5pt}/\hspace{5pt}x \cdot y = 0\}
+	\]
+	$x \cdot y = 0$ no se verifica en un grupo conmutativo; por tanto no es subespacio vectorial
+	\section{Ejercicio 3}
+	\[
+	S = \{(x,y,z)\in R^3 \hspace{5pt}/\hspace{5pt}2x - y + 3z = 1\} = \{(x,2x + 3z - 1,z)\in R^3 \hspace{5pt}/\hspace{5pt}x,z \in R\}
+	\]
+	1. Ver si es distinto del vacío: $S \neq \emptyset$
+	\[
+	(1,1,0) \in S \rightarrow S \neq \emptyset 
+	\]
+	2. Ver si la combinación lineal de dos vectores de S pertenece a S: ¿$\alpha(x,2x+3z-1,z) + \beta(x',2x'+3z'-1,z') \in S$?
+	\[
+	\alpha(x,2x+3z-1,z) + \beta(x',2x'+3z',z') =
+	\]
+	\[
+	(\alpha x + \beta x', \alpha (2x+3z-1)+\beta(2x'+3z'-1),\alpha z + \beta z') \notin S, \alpha + \beta \neq 1, \forall \alpha , \beta
+	\]
+	Al no verificar ambas condiciones, podemos afirmar que no es subespacio vectorial.
+	\section{Ejercicio 4}
+	\[
+	S = \{(x,y,z)\in R^3 \hspace{5pt}/\hspace{5pt}2x - z = 0; x + y + z = 0\} = \{(x,-3x,2x)\in R^3 \hspace{5pt}/\hspace{5pt}x \in R\}
+	\]
+	1. Ver si es distinto del vacío: $S \neq \emptyset$
+	\[
+	(1,-3,2) \in S \rightarrow S \neq \emptyset 
+	\]
+	2. Ver si la combinación lineal de dos vectores de S pertenece a S: ¿$\alpha(x,-3x,2x) + \beta(x',-3x',2x') \in S$?
+	\[
+	\alpha(x,-3x,2x) + \beta(x',-3x',2x') = (\alpha x + \beta x', \alpha (-3x)+\beta(-3x'),\alpha 2x + \beta 2x') \in S, \forall \alpha , \beta
+	\]
+	Al verificar esas dos condiciones, podemos afirmar que es subespacio vectorial.
+\end{document}

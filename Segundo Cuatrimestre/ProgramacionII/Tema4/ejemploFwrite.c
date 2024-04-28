@@ -87,21 +87,17 @@ int main(int argc, char **argv){
 listaGenerica_t leeLineaDinamicaFichero(FILE *f){
 	listaGenerica_t linea = {.tipo = string, .cadena = NULL, .tamMax = 0, .numUsados = 0};
 	char ultimaLetraLeida = '\0';
-	while((ultimaLetraLeida != '\n') && (!feof(f))){
+	do {
 		ultimaLetraLeida = getc(f);
 		if (linea.numUsados == linea.tamMax){
 			linea.tamMax++;
 			linea.cadena = (char*)realloc(linea.cadena, sizeof(char)*linea.tamMax);
 		}
-		if (ultimaLetraLeida != '\n'){
+		if ((ultimaLetraLeida != '\n') && (ultimaLetraLeida != EOF)){
 			linea.cadena[linea.numUsados] = ultimaLetraLeida;
 			linea.numUsados++;
 		}
-	}
-	if (linea.numUsados == linea.tamMax){
-		linea.tamMax++;
-		linea.cadena = (char*)realloc(linea.cadena, sizeof(char)*linea.tamMax);
-	}
+	}while((ultimaLetraLeida != '\n') && (!feof(f)));
 	linea.cadena[linea.numUsados] = '\0';
 	return linea;
 }
