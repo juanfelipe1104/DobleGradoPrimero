@@ -11,7 +11,6 @@ int main (int argc, char **argv){
 	//Minimo y maximo 9 argumentos
 	if (argc != 10){
 		printf("Error, minimo y maximo 9 argumentos\n");
-		return 1;
 	}
 	else {
 		for (int i = 1; i < NUM_FILAS+1; i++){
@@ -30,11 +29,9 @@ int main (int argc, char **argv){
 				}
 				printf("\n");
 			}
-			return 0;
 		}
 		else {
 			printf("No se puede rellenar la matriz");
-			return 1;
 		}
 	}
 }
