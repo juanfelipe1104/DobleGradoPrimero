@@ -50,7 +50,7 @@ int main (int argc, char **argv){
 				lineasFichero.lineas[lineasFichero.numLineas-1] = leeLineaDinamicaFichero(fichero);
 			}
 			fclose(fichero);
-			listaUsuarios.numUsuarios = lineasFichero.numLineas-1;
+			listaUsuarios.numUsuarios = lineasFichero.numLineas;
 			listaUsuarios.usuarios = (usuario_t*)realloc(listaUsuarios.usuarios, sizeof(usuario_t)*listaUsuarios.numUsuarios);
 			for (int i = 0; (i < listaUsuarios.numUsuarios) && (comprobacion); i++){
 				listaUsuarios.usuarios[i].nombre = strtok(lineasFichero.lineas[i], ",");
