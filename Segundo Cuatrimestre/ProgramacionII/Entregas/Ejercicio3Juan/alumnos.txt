@@ -1,0 +1,6 @@
+Nombre: Marta, Apellido: Alonso, Edad: 20
+Nombre: Sergio, Apellido: Gomez, Edad: 19
+Nombre: Marta, Apellido: Perez, Edad: 25
+Nombre: Davis, Apellido: Rodriguez, Edad: 26
+Nombre: Juan, Apellido: Rodriguez, Edad: 19
+Nombre: Juan, Apellido: Perez, Edad: 20
