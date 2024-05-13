@@ -1,0 +1,2 @@
+que. Numero de ocurrencias: 4. Lineas: 1 1 3 5 
+palabras. Numero de ocurrencias: 1. Lineas: 4 

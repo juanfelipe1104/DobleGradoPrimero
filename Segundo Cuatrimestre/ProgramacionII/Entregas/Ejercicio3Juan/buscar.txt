@@ -1,5 +1,0 @@
-Aqui un fichero que podria ser mas largo pero que no lo es
-con distintas lineas
-algunas mas cortas que otras
-y distintas palabras para poder buscar coincidencias
-podemos alargarlo pero creo que esta claro
