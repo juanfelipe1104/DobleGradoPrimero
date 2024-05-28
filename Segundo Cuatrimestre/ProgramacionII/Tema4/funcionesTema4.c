@@ -5,7 +5,7 @@ Funciones Tema 4 (Ficheros)
 int existeFichero(char *nombreFichero){
 	FILE *fichero = NULL;
 	int existe = 1;
-	fichero = fopen(nombreFichero, "r+");
+	fichero = fopen(nombreFichero, "rb");
 	if(fichero == NULL){
 		existe = 0;
 	}
@@ -15,32 +15,27 @@ int existeFichero(char *nombreFichero){
 	return existe;
 }
 
-char *leeLineaDinamicaFichero(FILE *f){
-	char *letras = NULL, ultimaLetraLeida = '\0';
-	int numLetrasLeidas = 0, numLetrasMax = 0;
+char *leeLineaDinamicaFichero(FILE *fichero){
+	char *linea = NULL, letra = '\0';
+	int numLetras = 0;
 	do {
-		ultimaLetraLeida = getc(f);
-		if (numLetrasLeidas == numLetrasMax){
-			numLetrasMax++;
-			letras = (char*)realloc(letras, sizeof(char)*numLetrasMax);
-		}
-		if ((ultimaLetraLeida != '\n')&&(ultimaLetraLeida != EOF)){
-			letras[numLetrasLeidas] = ultimaLetraLeida;
-			numLetrasLeidas++;
-		}
-	}while((ultimaLetraLeida != '\n') && (!feof(f)));
-	letras[numLetrasLeidas] = '\0';
+		letra = getc(fichero);
+		linea = (char*)realloc(linea, sizeof(char)*(numLetras+1));
+		linea[numLetras] = letra;
+		numLetras++;
+	}while((letra != '\n') && (letra != EOF));
+	letras[numLetras-1] = '\0';
 	return letras;
 }
 
-int tamanoFichero(char *fileName){
-	FILE *f = NULL;
+int tamanoFichero(char *nombreFichero){
+	FILE *fichero = NULL;
 	int size = 0;
-	f = fopen(fileName, "r+");
-	if (f != NULL){
-		fseek(f, 0, SEEK_END); //La primera posicion desde el final
-		size = ftell(f);
-		fclose(f);
+	fichero = fopen(nombreFichero, "rb");
+	if (fichero != NULL){
+		fseek(fichero, 0, SEEK_END); //La primera posicion desde el final
+		size = ftell(fichero);
+		fclose(fichero);
 	}
 	return size;
 }

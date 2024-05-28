@@ -15,14 +15,6 @@ char *copiarCadenas(char *cadenaOrigen){
 	return cadenaDestino;
 }
 
-char *concatenarCadenas(char *cadenaOrigen){
-	char *cadenaDestino = NULL;
-	cadenaDestino = (char*)realloc(cadenaDestino, strlen(cadenaOrigen)+1);
-	cadenaDestino[0] = '\0';
-	strcat(cadenaDestino, cadenaOrigen);
-	return cadenaDestino;
-}
-
 void ordenaCadenas(lineas_t *lineasFichero){
 	char *auxiliar = NULL;
 	for (int i = 0; i < lineasFichero->numLineas; i++){
