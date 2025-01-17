@@ -1,0 +1,14 @@
+/* Maquetacion */
+
+p {
+	display: inline-block; /*block, inline, inline-block*/
+}
+aside {
+	float: right;
+}
+
+main {
+	position: absolute; /*static, relative (No se rompe el flujo de html), fixed (No se mueve de donde lo pongas)*/ 
+	top: 0;
+	left: 0;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+		<meta charset="utf-8">
+		<title>Plantilla</title>
+		<link href="Ejercicio12.css" rel="stylesheet" type="text/css">
+		<script src="Ejercicio12.js" type="text/javascript" defer></script>
+	</head>
+	
+	<body>
+		<form>
+			Formulario de Registro
+			<input size="6" id="nombre" placeholder="Nombre..." required>
+			<input size="6" id="apellido" placeholder="Apellidos..." required>
+			<input size="6" id="correo" placeholder="Introduzca su correo" required>
+			<select id="sexo" value="Seleccione su sexo" required>
+				<option>Hombre</option>
+				<option>Mujer</option>
+			</select>
+			<input size="6" id="contraseña" type="password" placeholder="Introduzca su Contraseña" required>
+			<textarea id="comentario" rows="10" cols="50" placeholder="Enviar comentario" required></textarea>
+			<input type="checkbox" id="terminos" required>Estoy de acuerdo con los Términos
+			<input type="button" id="registrar" onclick="informacion()" value="Registrar">
+			<input type="reset" id="borrar" value="Borrar">
+		</form>
+	</body>
+	
+</html>

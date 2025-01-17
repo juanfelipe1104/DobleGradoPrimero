@@ -1,0 +1,75 @@
+.encabezados{
+	text-align: center;
+	color: red;
+}
+/* # para ID y . para clases */
+
+@font-face{
+	font-family: "adelia";
+	src: url("/adelia_3/adelia.ttf");
+}
+
+body{
+}
+
+p{
+	font-size: 2em;
+	font-family: adelia;
+}
+
+@keyframes movimiento{
+	from {
+		margin-left: 100%;
+	}
+	25%{
+		font-size: 50%;
+		margin-left: 25%;
+	}
+	75%{
+		font-size: 500%;
+		margin-left: 25%;
+	}
+	to {
+		margin-right: 0%;
+	}
+}
+
+a{
+	text-decoration: none;
+	animation-name: movimiento;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#imagen1{
+	transform: rotate(30deg) scale(2) translate (10px);
+}
+
+.caja_azul{
+	border: 5px solid black;
+	padding-bottom: 100px;
+	background-color: cyan
+}
+
+#caja1:hover{
+	background-color: magenta;
+	transform: rotate(45deg);
+}
+
+#caja2:hover{
+	background-color: yellow;
+	transform: scale(2);
+}
+
+#caja3:hover{
+	background-color: blue;
+	transform: translate(60px);
+}
+
+#caja4:hover{
+	background-color: red;
+	transform: skewX(25deg);
+}
+
+/* Comentarios */

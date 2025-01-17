@@ -1,0 +1,47 @@
+    1  mkdir MisPruebas
+    2  mkdir MisPruebas/Mis_documentos
+    3  cd /home/juan/MisPruebas/Mis_documentos
+    4  cd ~
+    5  cd MisPruebas/Mis_documentos
+    6  cd -
+    7  mkdir MisPruebas/Mis_documentos/Mis_enlaces
+    8  cd MisPruebas/Mis_documentos
+    9  touch doc_1.txt
+   10  cd Mis_enlaces
+   11  ln -s ../doc_1.txt
+   12  ls -l
+   13  cd ../
+   14  cp /var/log/syslog ./mi_syslog
+   15  cd Mis_enlaces
+   16  ln -s ../mi_syslog ./mi_link_a_syslog
+   17  cd ../../
+   18  ls -laR
+   19  cd
+   20  mkdir MisFicheros
+   21  cd MisFicheros
+   22  echo "Hola Mundo" > Fichero_1.txt
+   23  echo "estoy usando Linux" > Fichero_22.txt
+   24  echo "y practicando los primeros comandos" > Fichero_333.txt
+   25  cat Fichero_1.txt
+   26  cat Fichero_22.txt
+   27  cat Fichero_333.txt
+   28  cat F*
+   29  cp ./Fichero_1.txt ./fichero1.txt
+   30  mv Fichero_22.txt Mi_fichero22.txt
+   31  touch BACKUP.5
+   32  touch BACKUP.66
+   33  touch BACKUP.777
+   34  ls -l
+   35  ls [[:upper:]]*
+   36  ls [[:lower:]]*
+   37  ls [MF]*
+   38  ls Fichero??
+   39  ls BACKUP.[[:digit:]][[:digit:]]
+   40  cd
+   41  ls -l
+   42  mv MisFicheros MisPruebas
+   43  cd MisPruebas/MisFicheros
+   44  tar cvf Backups.tar BACKUP*
+   45  tar cvzf Backups_compress1.tgz BACKUP*
+   46  tar cvjf Backups_compress2.bz2 BACKUP*
+

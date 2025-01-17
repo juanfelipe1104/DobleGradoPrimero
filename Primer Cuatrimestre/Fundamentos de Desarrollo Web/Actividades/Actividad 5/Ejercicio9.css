@@ -1,0 +1,32 @@
+body {
+	background-color: orange;
+	margin: 0px;
+	border: 0px;
+}
+
+.bloque {
+	display: flex;
+	align-items: center;
+	background-color: black;
+}
+
+#text {
+	font-size: 2em;
+	color: white;
+	text-align: right;
+	margin-left: 5%;
+}
+
+#text2 {
+	font-size: 1em;
+	color: white;
+	text-align: right;
+	margin-left: 5%;
+	font-style: italic;
+}
+
+#image {
+	margin-left: 32.5%;
+	height: 400px;
+	width: 350px;
+}

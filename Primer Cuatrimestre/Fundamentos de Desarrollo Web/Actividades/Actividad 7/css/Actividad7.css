@@ -1,0 +1,141 @@
+html{
+    overflow-x: hidden;    
+}
+
+@font-face{
+	font-family: "ChineseDragon";
+    src: url("../chinese_dragon/ChineseDragon.ttf");
+}
+
+body{
+	background-color: black;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.titulo{
+	text-align: center;
+	color: white;
+	font-size: 5em;
+	font-family: ChineseDragon;
+	margin-top: 15%;
+}
+
+#nombre{
+	margin-left: 30%;
+	text-align: center;
+	font-family: ChineseDragon;
+	font-size: 3em;
+	padding:0% 5%;
+	background-color: white;
+	margin-bottom: 2%;
+}
+
+#jugar {
+	margin-left: 41%;
+	text-align: center;
+	font-family: ChineseDragon;
+	font-size: 3em;
+	padding:0% 5%;
+	background-color: white;
+}
+
+#juego {
+	margin-top: 0%;
+}
+
+#contenedor-dificultad {
+	display: flex;
+	justify-content: center;
+}
+
+.dificultad {
+	text-align: center;
+	font-family: ChineseDragon;
+	font-size: 3em;
+	padding:0% 5%;
+	background-color: white;
+	margin: 2% 2.5%;
+}
+
+.descripcion {
+	text-align: center;
+	font-family: ChineseDragon;
+	font-size: 2em;
+	color: white;
+}
+/* Mejor posicion en la pagina pero se superponen los elementos dependiendo del tamaño de la pantalla
+#informacion {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+}
+*/
+
+#tiempoRestante {
+	/* Mejor posicion en la pagina pero se superponen los elementos dependiendo del tamaño de la pantalla
+	position: absolute;
+	top: 0%;
+	left: 75%;
+	*/
+	text-align: center;
+	font-family: ChineseDragon;
+	font-size: 2em;
+	color: white;
+}
+
+#contenedor-cartas {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.cartas {
+	margin: 1% 2.5%;
+	height: 15%;
+	width: 10%;
+}
+
+.giro {
+	transition-property: transform;
+	transition-duration: 1s;	
+	transform: rotateY(360deg); 	
+}
+
+#reset {
+	margin-left: 41%;
+	text-align: center;
+	font-family: ChineseDragon;
+	font-size: 3em;
+	padding:0% 5%;
+	background-color: white;
+}
+
+.final {
+	animation: aparicion 5s 1;
+	animation-timing-function: linear;
+}
+
+.zoom-out {
+	display: none;
+}
+
+@keyframes aparicion{
+	from{
+		opacity: 0%; 
+	}
+	20%{
+		opacity: 20%;
+	}
+	40%{
+		opacity: 40%;
+	}
+	60% {
+		opacity: 60%;
+	}
+	80%{
+		opacity: 80%;
+	}
+	to{
+		opacity: 100%;
+	}
+}

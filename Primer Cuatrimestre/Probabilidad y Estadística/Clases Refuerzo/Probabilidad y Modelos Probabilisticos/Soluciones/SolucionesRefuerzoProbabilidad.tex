@@ -1,0 +1,213 @@
+\documentclass[fleqn]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\title{Soluciones Probabilidad y Modelos Probabilísticos}
+\author{Juan Rodríguez}
+
+\begin{document}
+	\maketitle
+	\section{Solución Ejercicio 1}
+	\begin{itemize}
+		\item $p(A) = 0.6$
+		\item $p(B) = 0.4$
+		\item $p(T1) = 0.7$
+		\item $p(T1 \cap T2) = 0.3$
+		\item $p(T1 \cup T2) = 1$
+		\item $p(C/A) = 0.1$
+		\item $p(C/B) = 0.15$
+		\item $p (C/T1) = 0.05$
+	\end{itemize}
+	C - Corte de llamada \\
+	a) Nos piden la probabilidad de que se corte la llamada (C) (Teorema de Probabilidad Total)
+	\[
+	p(C) = p(C/A) \cdot p(A) + p(C/B) \cdot p(B) = (0.1\cdot0.6)+(0.15\cdot0.4) = \boxed{0.12}
+	\]
+	b) Nos piden la probabilidad de T2 y no T1
+	\[
+	p(T1 \cup T2) = p(T1) + p(T2) - p(T1 \cap T2) \rightarrow p(T2) = p(T1 \cup T2) - p(T1) + p(T1 \cap T2) = 1 - 0.7 + 0.3 = 0.6
+	\]
+	\[
+	p(T2 \cap \bar{T1}) = p(T2) - p(T1 \cap T2) = 0.6 - 0.3 = \boxed{0.3}
+	\]
+	c) Nos piden la probabilidad de T1 condicionado por C
+	\[
+	p(C/T1) = p(C \cap T1) / p(T1) \rightarrow p(C \cap T1) = p(T1) \cdot p(C/T1) = 0.7 \cdot 0.05 = 0.035
+	\]
+	\[
+	p(T1/C) = 0.035 / 0.12 = 0.292
+	\]
+	d) Nos piden la probabilidad de C condicionado por no T1
+	\[
+	p(C/\bar{T1}) = p(C \cap \bar{T1}) / \bar{p(T1)} = (p(C) - p(C \cap T1))/ 1 - p(T1) = \frac{0.12 - 0.035}{0.3} = \boxed{0.28} 
+	\]
+	\section{Solución Ejercicio 2}
+	\begin{itemize}
+		\item $p(R) = 24/86 = 0.28$
+		\item $p(D) = 68/86 = 0.79$
+		\item $p(D \cup R) = 1$
+		\item $p(C/R) = 0.65$
+		\item $p(C/D) = 0.8$ 
+	\end{itemize}
+	R - Robos, D - Daños, C - Compensaciones \\
+	a) Nos piden la intersección de robos y daños
+	\[
+	p(R \cup D) = p(R) + p(D) - p(R \cap D) \rightarrow p(R \cap D) = p(R) + p(D) - p(R \cap D) = 0.28 + 0.79 - 1 = \boxed{0.07}
+	\]
+	b) Si los sucesos son independientes, verifican que $p(R \cap D) = p(R) \cdot p(D)$, pero $0.07 \neq 0.28 \cdot 0.79 = 0.22$. Por lo tanto, no son independientes\\
+	c) Nos piden R y no C (C = compensación)
+	\[
+	p(R \cap \bar{C}) = p(\bar{C}/R) \cdot p(R) = (1 - p(C/R)) \cdot p(R) = 0.35 \cdot 0.28 = \boxed{0.098}
+	\]
+	d) Nos piden D y C
+	\[
+	p(D \cap C) = p(C/D) \cdot p(D) = 0.8 \cdot 0.79 = \boxed{0.63} 
+	\]
+	\section{Solución Ejercicio 3}
+	\begin{itemize}
+		\item $p(E) = 0.01$
+		\item $p(P/E) = 0.97$
+		\item $p(\bar{P}/\bar{E} = 0.98) \rightarrow p(P/\bar{E}) = 0.02$ 
+	\end{itemize}
+	a) Nos piden la probabilidad de que de positivo y este enfermo
+	\[
+	p(P \cap E) = p(P/E) \cdot p(E) = 0.97 * 0.01 = \boxed{0.0097}
+	\]
+	b) Nos piden la probabilidad de que este enfermo sabiendo que ha dado positivo (Bayes)
+	\[
+	p(P) = p(P/E) \cdot p(E) + p(P/\bar{E}) \cdot p(\bar{E}) = (0.97 \cdot 0.01) + (0.02 \cdot 0.99) = 0.0295
+	\]
+	\[
+	p(E/P) = p(E \cap P)/p(P) = \frac{0.097}{0.0295} = \boxed{0.33}
+	\]
+	\section{Solución Ejercicio 4}
+	\begin{itemize}
+		\item $p(\bar{A}) = \frac{2}{3} \rightarrow p(A) = 1 - \frac{2}{3} = \frac{1}{3}$
+		\item $p(S/A) = \frac{1}{2}$
+		\item $p(\bar{S}/A) = \frac{1}{2}$
+		\item $p(\bar{S}/\bar{A}) = 0.25 \rightarrow p(S/\bar{A}) = 1 - 0.25 = 0.75$
+	\end{itemize}
+	A - Asistir a clase, S - Suspender el examen \\
+	Nos piden la probabilidad de que haya asistido a clase sabiendo que ha suspendido (Bayes)
+	\[
+	p(S) = p(S/A) \cdot p(A) + p(S/\bar{A}) \cdot p(\bar{A}) = (\frac{1}{2} \cdot \frac{1}{3}) + (0.75 \cdot \frac{2}{3}) = \frac{2}{3}
+	\]
+	\[
+	p(S/A) = p(A \cap S) / p(A) \rightarrow p(A \cap S) = p(S/A) \cdot p(A) = \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6}
+	\]
+	\[
+	p(A/S) = p(A \cap S) / p(S) = \frac{\frac{1}{6}}{\frac{2}{3}} = \boxed{0.25}
+	\]
+	\section{Solución Ejercicio 5}
+	a) Nos piden la probabilidad de que ninguna empresa (0) presente suspensión de pagos durante un trimestre. Por lo tanto definimos: \\
+	X $\equiv$ número de empresas en suspensión de pagos al trimestre ~ $P(1.7)$
+	\[
+	P(X=0) = e^{-1.7}\frac{1.7^{0}}{0!} = \boxed{e^{-1.7}}
+	\]
+	b) Nos piden la probabilidad de que al menos dos empresas presenten suspensión de pagos durante un año. Por lo tanto definimos: \\
+	Y $\equiv$ número de empresas en suspensión de pagos al año ~ $P(6.8)$
+	\[
+	P(Y \geq 2) = 1 - P(Y < 2) = 1 - (P(Y = 0) + P(Y = 1)) = \boxed{1 - (e^{-6.8}\frac{6.8^{0}}{0!} + e^{-6.8}\frac{6.8^{1}}{1!})} 
+	\]
+	\section{Solución Ejercicio 6}
+	Nos piden encontrar el radio donde encontrar al menos una langosta tenga probabilidad de 0.99. Por lo tanto definimos: \\
+	X $\equiv$ número de langostas por kilómetro cuadrado ~ $P(2)$ \\
+	$\rightarrow$ en k kilómetros cuadrados ~ $P(2k)$
+	\[
+	P(X \geq 1) = 1 - P(X=0) = 1 - e^{-2k}\frac{2k^0}{0!} = 0.99 \rightarrow e^{-2k} = 1 - 0.99 
+	\]
+	\[
+	\rightarrow ln(e^{-2k}) = ln(0.01) \rightarrow k = \frac{-4.605}{-2} = 2.3
+	\]
+	\[
+	\pi r^2 = 2.3 \rightarrow \boxed{r = 0.856 km}
+	\]
+	\section{Solución Ejercicio 7}
+	a) Definimos lo siguiente: X $\equiv$ dureza de las probetas ~ $N(70;3)$
+	\[
+	p(67 \leq X \leq 75) = p(\frac{67-70}{3} \leq \frac{X-70}{3} \leq \frac{75-70}{3}) = p(-1 \leq Z \leq 1.67) = 0.9525 - 0.1587 = \boxed{0.7938}
+	\]
+	b) Primero definimos una variable de bernouilli
+	\[
+	Y_i = 
+	\begin{cases}
+		1 & \text{si dureza} < 73.84 \\
+		0 & \text{en caso contrario}
+	\end{cases}
+	\]
+	\[
+	p(X < 73.84) = p(\frac{X-70}{3} < \frac{73.84-70}{3}) = p(Z < 1.28) = 0.8997 
+	\]
+	$p = 0.8997 ; q = 0.1003$ \\
+	Ahora definimos una distribución binomial - Y $\equiv$ número de probetas con dureza $<$ 73.84 ~ $B(10,0.8997)$
+	\[
+	p(Y \leq 8) = 1 - p(Y > 8) = 1 - (p(Y = 9) + p(Y = 10)) =
+	\]
+	\[
+	= \boxed{1 - (\binom{10}{9}0.8997^{9}\cdot0.1003^{1} + \binom{10}{10}0.8997^{10}\cdot0.1003^{0})}
+	\]
+	c) Definimos una distribución binomial - T $\equiv$ número de probetas con dureza $<$ 73.84 ~ $B(100,0.8997)$ \\
+	Pero podemos aproximarla con una normal ~ $N(89,97, 3)$
+	\[
+	p(T \leq 80) = p(\frac{T-89.97}{3} \leq \frac{80-89.97}{3}) = p(Z \leq -3.32) = \boxed{0.005}
+	\]
+	\section{Solución Ejercicio 8}
+	Definimos la variable $T$ $\equiv$ tiempo antes de fallar ~ $E(\frac{1}{5})$
+	
+	\[
+	f(t) = 
+	\begin{cases}
+		\frac{1}{5} e^{-\frac{t}{5}} 	& x \geq 0 \\
+		0 								& x < 0
+	\end{cases}
+	\]
+	\[
+	F(x) = \int_{-\infty}^{x} f(t) \, dt
+	\]			
+	a) Primero definimos una variable de Bernouilli:
+	\[
+	X_i = 
+	\begin{cases}
+		1 & \text{si tiempo antes de fallar} > 8 \\
+		0 & \text{en caso contrario}
+	\end{cases}
+	\]
+	\[
+	p(T > 8) = 1 - F(8) = 0.2
+	\]	
+	$p = 0.2 ; q = 0.8$ \\
+	Ahora definimos una distribución binomial - X $\equiv$ Número de componentes que siguen funcionando al cabo de 8 años ~ $B(7;0,2)$
+			
+	\[
+	p(X > 2) = 1 - p(X = 0) - p(X = 1) = \boxed{1 - (\binom{7}{0} (0.2)^{0} (0.8)^{7}) - (\binom{7}{1}(0.2)^{1} (0.8)^{6})}
+	\]
+	b) Reutilizamos la variable de bernouilli definida en el apartado a) - $X_i$ \\
+	
+	Ahora definimos una distribución binomial - Y $\equiv$ Número de componentes que siguen funcionando al cabo de 8 años ~ $B(20;0,2)$ \\
+	
+	Calculamos la probabilidad de que no funcione ninguna componente del lote
+	\[
+	p(Y = 0) = \binom{20}{0} (0.2)^{0} (0.8)^{20} = 0.0115
+	\]
+	
+	Ahora definimos una segunda distribución binomial (para los lotes) - N $\equiv$ Número de lotes de 20 componentes que no funcionan ninguna al cabo de 8 años ~ $B(4;0,0115)$ \\
+	
+	Calculamos la probabilidad de que al menos un lote cumpla dichas condiciones
+	\[
+	p(N \geq 1) = 1 - p(N < 1) = 1 - p(N = 0) = 1 - (\binom{4}{0} (0.0115)^{0} (0.9885)^{4}) = \boxed{0.045}
+	\]
+	
+	c) 
+	\[
+	F(10) = 1 - f(10) = 1 - e^{\frac{-10}{5}} = \boxed{1 - e^{-2}}
+	\]
+	
+	d) Para hallar hasta el tercer éxito, debemos usar una binomial negativa. Por lo tanto, definimos la siguiente variable reutilizando la variable de bernouilli del apartado a). $K$ $\equiv$ Número de componentes fallidas hasta el tercer éxito ~ $BN(3;0,2)$ \\
+	
+	Nos piden hallar el valor medio:
+	\[
+	\mu = \frac{3 * 0.8}{0.2} = 12
+	\]
+	
+	Por lo tanto necesitamos un total de 15 componentes de media (12 fallos y 3 exitos) para alcanzar 3 exitos
+\end{document}

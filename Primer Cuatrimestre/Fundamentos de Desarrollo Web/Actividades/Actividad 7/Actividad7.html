@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Juego del Tarot</title>
+		<link rel="icon" type="image/png" href="img/logo.png">
+		<link href="css/Actividad7.css" rel="stylesheet" type="text/css">
+		<script src="js/Actividad7.js" type="text/javascript" defer></script>
+	</head>
+
+	<body>
+		<h1 class="titulo">Juego del Tarot</h1>
+		<form>
+			<input id="nombre" placeholder="Ingrese su nombre">
+		</form>
+		<button id="jugar" onclick="jugar()">Jugar</button>
+		<h1 class="titulo zoom-out">Elige una opcion</h1>
+		<div id="contenedor-dificultad">
+			<button class="dificultad zoom-out" onclick="facil()">Facil</button>
+			<button class="dificultad zoom-out" onclick="medio()">Medio</button>
+			<button class="dificultad zoom-out" onclick="dificil()">Dificil</button>
+		</div>
+		<h1 id="juego" class="titulo zoom-out">Juego del Tarot</h1>
+		<p class="descripcion zoom-out">Intenta encontrar las parejas correctas en el menor tiempo posible. Buena suerte!!!</p>
+		<p id="informacion" class="descripcion zoom-out"></p>
+		<p id="tiempoRestante" class="zoom-out">Tiempo restante: </p>
+		<div id="contenedor-cartas">
+			<input type="image" class="cartas zoom-out" src="img/reverso.jpg" onclick="voltearCarta(this,0)">
+			<input type="image" class="cartas zoom-out" src="img/reverso.jpg" onclick="voltearCarta(this,1)">
+			<input type="image" class="cartas zoom-out" src="img/reverso.jpg" onclick="voltearCarta(this,2)">
+			<input type="image" class="cartas zoom-out" src="img/reverso.jpg" onclick="voltearCarta(this,3)">
+			<input type="image" class="cartas zoom-out" src="img/reverso.jpg" onclick="voltearCarta(this,4)">
+			<input type="image" class="cartas zoom-out" src="img/reverso.jpg" onclick="voltearCarta(this,5)">
+			<input type="image" class="cartas zoom-out" src="img/reverso.jpg" onclick="voltearCarta(this,6)">
+			<input type="image" class="cartas zoom-out" src="img/reverso.jpg" onclick="voltearCarta(this,7)">
+			<input type="image" class="cartas zoom-out" src="img/reverso.jpg" onclick="voltearCarta(this,8)">
+			<input type="image" class="cartas zoom-out" src="img/reverso.jpg" onclick="voltearCarta(this,9)">
+			<input type="image" class="cartas zoom-out" src="img/reverso.jpg" onclick="voltearCarta(this,10)">
+			<input type="image" class="cartas zoom-out" src="img/reverso.jpg" onclick="voltearCarta(this,11)">
+		</div>
+		<h1 class="titulo zoom-out">Mensaje final</h1>
+		<p class="descripcion zoom-out">Descripcion final</p>
+		<button id="reset" class="zoom-out">Salir</button>
+	</body>
+
+</html>

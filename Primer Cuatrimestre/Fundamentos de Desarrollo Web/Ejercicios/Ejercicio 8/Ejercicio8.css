@@ -1,0 +1,18 @@
+body {
+	text-align: center;
+}
+
+#image {
+	height: 400px;
+	width: 400px;
+}
+
+#prevButton {
+	height: 200px;
+	width: 200px;
+	background-color: light blue;
+}
+
+#nextButton {
+	background-color: light blue;
+}

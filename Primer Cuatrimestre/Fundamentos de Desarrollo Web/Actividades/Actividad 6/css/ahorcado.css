@@ -1,0 +1,209 @@
+/**** JUEGO DEL AHORCADO ****/
+
+html{
+    overflow-x: hidden;    
+}
+/* Modifique la letra original */
+@font-face{
+	font-family: "CRISTONE";
+    src: url("../cristone/Cristone.ttf");
+} 
+/* Modifique la imagen original por una personalizada*/
+body{
+	background-image: url("../img/paisaje_medieval.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+/*
+- Cambie los px por vh o em (segun corresponda)
+- Añadi el tipo de letra, color, borde y margin
+*/
+#reset{
+	font-size: 2em;
+	font-family: CRISTONE;
+	color: white;
+	background-color: black;
+	border: 5px solid white;
+	width: 50vh;
+	height: 5vh;
+	text-align: center;
+	margin-left: 77vh;
+	margin-bottom: 3vh;
+}
+/* Cambie los px por vh */
+#abcdario{
+	margin: 1vh;
+	margin-left: 40vh;
+}
+/*
+- Quite el padding y añadi el border
+- Cambie de clase a Id
+*/
+#main-container {
+  max-width: 800px;
+  margin: auto;  /*lo calcula el navegador, poniendo un valor adecuado*/
+  border: 5px solid white;
+}
+/* Añadido (desde id juego - linea 48; hasta id descripcion - linea 83)*/
+#juego {
+	margin-top: 0%;
+}
+
+.titulo {
+	text-align: center;
+	font-family: CRISTONE;
+	font-size: 5em;
+	color: white;
+	margin-top: 15%;
+}
+
+#jugar {
+	margin-left: 40%;
+	text-align: center;
+	font-family: CRISTONE;
+	font-size: 3em;
+	padding:0% 5%;
+	background-color: white;
+}
+
+.dificultad {
+	text-align: center;
+	font-family: CRISTONE;
+	font-size: 3em;
+	padding:0% 5%;
+	background-color: white;
+	margin: 2% 2.5%;
+}
+
+#contenedor-dificultad {
+	display: flex;
+	justify-content: center;
+}
+
+#descripcion {
+	text-align: center;
+	font-family: CRISTONE;
+	font-size: 2em;
+	color: white;
+}
+/*
+- Cambie los px por vh o em (segun corresponda)
+- Quite el margin
+*/
+#mensaje-final {
+  text-align: center;
+  color: red;
+  transition: all 0.8s ease;
+  font-size: 3em;
+  height: 20vh;
+}
+/* Añadido para desaparecer elementos */
+.zoom-out {
+	display: none;
+}
+/* Elimine la regla !important (No era necesaria) */
+.zoom-in {
+  transform: scale(1);
+}
+/* Cambie los px por vh o em (segun corresponda) */
+#acierto {
+  text-align: center;
+  min-height: 2vh;
+  transform: scale(0); /*lo hace desaparecer*/
+}
+
+.acierto{
+  animation: zoomInOut 1s ease;
+}
+
+.rojo {
+  color: red;
+}
+
+.verde{
+  color: green;
+}
+
+@keyframes zoomInOut {
+  0% {transform: scale(0);}
+  50% {transform: scale(1);}
+  70% {transform: scale(1);}
+  100% {transform: scale(0);}
+}
+/* Cambie el color */
+.palabra {
+  margin: 0 auto 25px auto;
+  text-align: center;
+  color: white;
+  letter-spacing: 6px;
+}
+
+#turnos {
+	color: white;
+	text-align: center;
+}
+/* Añado text-align: center para quitar la etiqueta <center> */
+span {
+   color: red;
+   text-align: center;
+}
+/* Clase añadida */
+.letra {
+	color: white;
+	background-color: black;
+	font-size: 3em;
+	font-family: CRISTONE;
+}
+/* Cambie el color */
+.letra:disabled { /*pseudo-clase*/
+  color:red;
+}
+
+#picture {
+  position: relative;  
+}
+/*
+- Cambie los px por vh o em (segun corresponda)
+- Elimine right
+*/
+#picture img {  /*selector espacio en blanco: descendientes*/
+  position: absolute;
+  top: -25vh;
+  height: 25vh;
+}
+
+#image5, #image4, #image3,
+#image2, #image1, #image0 {	
+  opacity: 0; /*invisible*/
+  transition: opacity 0.8s ease;
+}
+
+.fade-in {
+  opacity: 1 !important;
+}
+/* Añadi el Id espada y una animacion (Reemplazo del buitre)*/
+#espada{
+	animation: desplazamiento 3s infinite;
+	animation-timing-function: linear;
+	width: 25vh;
+	height: 25vh;
+}
+
+@keyframes desplazamiento{
+	from{
+		margin-right: 100%; 
+	}
+	25%{
+		transform: rotate(90deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	75%{
+		transform: rotate(270deg);
+	}
+	to{
+		margin-left: 100%;
+		transform: rotate(360deg);
+	}
+}

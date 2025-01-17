@@ -1,0 +1,18 @@
+    1  ls /usr/bin/j*
+    2  ls /usr/bin/*n
+    3  ls -lR /etc
+    4  mkdir Prueba2
+    5  cp /usr/bin/z* ./Prueba2/
+    6  cd Prueba2
+    7  zip mis_comprimidos.zip z* 
+    8  cp ./mis_comprimidos.zip ./mis_comprimidos2.zip
+    9  cd
+   10  mv Prueba2 OtraPrueba
+   11  mkdir Prueba3
+   12  mv ./OtraPrueba/[mz]* ./Prueba3
+   13  rmdir ./OtraPrueba
+   14  mkdir ./Prueba3/multimedia_pruebas
+   15  mkdir ./Prueba3/multimedia_pruebas/video
+   16  touch ./Prueba3/peliculas.txt
+   17  nano ./Prueba3/peliculas.txt
+   18  ln -s ./Prueba3/peliculas.txt ~/Prueba3/multimedia_pruebas/video/mis_peliculas.txt 

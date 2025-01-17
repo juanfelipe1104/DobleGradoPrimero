@@ -1,0 +1,56 @@
+\documentclass[fleqn]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\title{Examen Parcial MAIS/INSO Probabilidad y Estadística}
+\author{Juan Rodríguez}
+
+\begin{document}
+	\maketitle
+	\section{Ejercicio 1}
+	Se han tomado cinco muestras con la misma cantidad de glucógeno, se les ha aplicado una cantidad de glucogenasa (en milimoles/litro): \(X\), y se ha medido la velocidad de reacción, \(Y\), (en micromoles/minuto). Se han obtenido los siguientes datos:
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			\( x_i \) & 0.2 & 0.5 & 1.25 & 2.1 & 3.05 \\ \hline
+			\( y_i \) & 8 & 10 & 18 & 35 & 60 \\ \hline
+		\end{tabular}
+	\end{table}
+	\begin{itemize}
+		\item[a)] ¿Se puede deducir a partir de estos datos que la velocidad de reacción aumenta o disminuye linealmente con la concentración de glucogenasa?\\
+		En caso afirmativo, dar una expresión matemática del modelo de ajuste y utilizarlo para predecir la cantidad de glucogenasa aplicada en una reacción cuya velocidad ha sido de 45 micromoles/minuto.
+		\item[b)] Calcular e interpretar el coeficiente de regresión de \(y\) sobre \(x\).
+		\item[c)] ¿Cuánta variabilidad en la velocidad de reacción no queda explicada por la concentración de glucogenasa? Indicar también qué \% representa ese valor.
+		\item[d)] Dar una medida de la bondad del ajuste e interpretarla.
+		\item[e)] Representar en un boxplot los datos correspondientes a la velocidad de reacción. ¿Qué conclusiones puedes extraer de la gráfica?
+	\end{itemize}
+	\section{Ejercicio 2}
+	Una agencia de viajes ofrece tres tipos de destinos: regional, nacional e internacional. En general, los porcentajes de ventas son el (30\%) de viajes regionales, el (50\%) de nacionales y el (20\%) de internacionales, y las reclamaciones que recibe son del (1\%) en viajes regionales y nacionales y del (1.5\%) en viajes internacionales.
+	\begin{itemize}
+		\item[a)] De un total de 10 clientes, calcular la probabilidad de que al menos dos de ellos contraten un destino internacional y no emitan ninguna reclamación.
+		\item[b)] Calcular la probabilidad de que la quinta reclamación que recibe la agencia se produzca cuando alcanza los 40 contratos.
+		\item[c)] ¿Cuántos viajes contrata en media la agencia hasta que se produce la primera reclamación en un destino internacional?
+	\end{itemize}
+	\section{Ejercicio 3}
+	El número de productos (en cientos) que vende diariamente un centro comercial es una variable aleatoria \( X \) que, para cierta constante \( k \), tiene función de densidad
+	\[
+	f(x) = 
+	\begin{cases}
+		k(x - 1)(3 - x) & \text{si } 1 \leq x \leq 3 \\
+		0 & \text{en caso contrario}
+	\end{cases}
+	\]
+	\begin{itemize}
+		\item[a)] Determinar \( k \) para que \( f(x) \) sea realmente una función de densidad.
+		\item[b)] Obtener la función de distribución de \( X \).
+		\item[c)] ¿Cuál es la probabilidad de que a lo largo de una semana completa haya al menos un día en que el centro vende más de 200 productos?
+	\end{itemize}
+	\section{Ejercicio 4}
+	El tamaño de grano de un tipo de aluminio es una distribución normal de media \(96\) y desviación típica \(14\).
+	\begin{itemize}
+		\item[a)] ¿Cuál es la probabilidad de que el tamaño de grano exceda de \(100\)?
+		\item[b)] ¿Cuál es la probabilidad de que el tamaño de grano esté entre \(50\) y \(80\)?
+		\item[c)] ¿Qué intervalo incluye el \(90\%\) central de todos los tamaños de grano?
+	\end{itemize}
+\end{document}

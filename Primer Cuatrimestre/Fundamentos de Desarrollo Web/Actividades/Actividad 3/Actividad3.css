@@ -1,0 +1,24 @@
+body {
+	background-color: black;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+}
+a:link {
+	background-color: silver;
+	text-align: center;
+	border: 5px solid yellow;
+	font-size: 2em;
+	padding: 5vh;
+	margin: 10px;
+	text-decoration: none;
+	flex-grow: 1;
+}
+#caja3:hover {
+	background-color:purple;
+}
+#caja4 {
+	flex-grow: 4;
+}

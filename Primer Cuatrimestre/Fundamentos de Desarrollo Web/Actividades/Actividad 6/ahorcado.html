@@ -1,0 +1,49 @@
+<!-- JUEGO DEL AHORCADO -->
+
+<!DOCTYPE html>
+<!-- Elimine lang="es" -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- Cambie el titulo -->
+		<title>My Kingdom</title>
+		<!-- Añadi icono a la página -->
+		<link rel="icon" type="image/png" href="img/espadaCruzada.png">
+		<link rel="stylesheet" href="css/ahorcado.css">	
+		<script type= "text/javascript" src="js/ahorcado.js" defer></script>	
+	</head>
+	<body>
+			<!-- Añadi a la mayoria de elementos la clase "zoom-out" para hacerlos desaparecer y aparecer con javascript -->
+			<h1 class="titulo">MY KINGDOM</h1>
+			<!-- Añadido desde la linea 18 hasta la 27 -->
+			<button id="jugar" onclick="jugar()">Jugar</button>
+			<img id="espada" src="img/espada.png">
+			<h1 class="titulo zoom-out">TIPO DE DIFICULTAD</h1>
+			<div id="contenedor-dificultad">
+				<button class="dificultad zoom-out" onclick="facil()">Facil</button>
+				<button class="dificultad zoom-out" onclick="medio()">Intermedio</button>
+				<button class="dificultad zoom-out" onclick="dificil()">Dificil</button>
+			</div>
+			<h1 id="juego" class="titulo zoom-out">Juego del Ahorcado</h1>
+			<p id="descripcion" class="zoom-out">Intenta adivinar una palabra en el menor numero de intentos. Buena suerte!!!</p>
+			<div id="main-container" class="zoom-out">
+				<h1 id="mensaje-final"></h1>
+				<h2 id="acierto"></h2>
+				<h2 class="palabra" id="palabra"></h2><br>
+				<div id="picture" class="zoom-out">
+					<!-- Cambie todas las imagenes por imagenes personalizadas -->
+					<img src="img/ahorcado_6.png" id="image6">
+					<img src="img/ahorcado_5.png" id="image5">
+					<img src="img/ahorcado_4.png" id="image4">
+					<img src="img/ahorcado_3.png" id="image3">
+					<img src="img/ahorcado_2.png" id="image2">
+					<img src="img/ahorcado_1.png" id="image1">
+					<img src="img/ahorcado_0.png" id="image0">
+				</div>									
+			</div>
+			<!-- Quite la etiqueta center y br -->
+			<h2 id="turnos" class="zoom-out">Intentos restantes: <span id="intentos" class="zoom-out">6</span></h2> 
+			<button onclick="dificultad()" id="reset" class="zoom-out">Salir</button>
+			<div id="abcdario"></div>			
+	</body>
+</html>

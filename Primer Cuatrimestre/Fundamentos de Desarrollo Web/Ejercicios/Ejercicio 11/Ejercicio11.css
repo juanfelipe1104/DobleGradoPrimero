@@ -1,0 +1,22 @@
+body {
+	background-color: blue;
+	text-align: center;
+}
+
+header {
+	color: cyan;
+	font-size: 3em;
+	margin-top: 5%;
+}
+p {
+	color: white;
+}
+main {
+	display: flex;
+	justify-content: center;
+}
+form {
+	border: 2px solid cyan;
+	margin: 2%;
+	padding: 5% 15%;
+}
